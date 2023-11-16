@@ -1,0 +1,21 @@
+  const Discord = require("discord.js"); //  We need the discord.js package
+
+module.exports.run = async (client, message, args) => {
+ let user = message.mentions.users.first();
+        let razon = args.slice(1).join(' ');
+  if(message.member.hasPermission("ADMINISTRATOR") ){
+        if (message.mentions.users.size < 1) return message.reply('You have to tag somebody').catch(console.error);
+        if(!razon) return message.channel.send('please,type why you whant to ban him, `ban @username [reazon]`');
+        if (!message.guild.member(user).bannable) return message.reply("I can't ban him.");
+
+    
+        message.guild.member(user).ban(razon);
+        message.channel.send(`**${user.username}**, was banned from the server, becouse: ${razon}.`); 
+}else{
+message.reply('you need the "`ADMINISTRATOR`" permission to use this');
+}
+}
+
+module.exports.help = {
+    name: "ban" //command name
+}

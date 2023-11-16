@@ -1,0 +1,29 @@
+{
+  "name": "cherry",
+  "version": "1.0.0",
+  "description": "Hi i'm Cherry, a Dj for ur Discord server '^' .",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node app.js"
+  },
+  "keywords": [
+    "music-bot",
+    "music",
+    "dj",
+    "discord-bot",
+    "discord",
+    "cherry",
+    "cherry-bot"
+  ],
+  "author": "Jack McRift#2343",
+  "license": "ISC",
+  "dependencies": {
+    "discord.js": "^11.4.2",
+    "discord.js-musicbot-addon": "^13.4.4",
+    "ffmpeg-binaries": "^4.0.0",
+    "opusscript": "0.0.6",
+    "youtube-search": "^1.1.4",
+    "ytdl-core": "^0.29.1"
+  }
+}

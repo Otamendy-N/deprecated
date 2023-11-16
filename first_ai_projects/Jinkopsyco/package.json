@@ -1,0 +1,22 @@
+{
+  "name": "seraph",
+  "version": "1.0.0",
+  "description": "An IA discord BOT",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo no test command",
+    "start": "node app.js"
+  },
+  "keywords": [
+    "IA",
+    "discord"
+  ],
+  "author": "PsicoJinko",
+  "license": "ISC",
+  "dependencies": {
+    "@tensorflow/tfjs": "^1.1.0",
+    "colors": "^1.3.3",
+    "discord.js": "^11.4.2",
+    "fs-extra": "^7.0.1"
+  }
+}

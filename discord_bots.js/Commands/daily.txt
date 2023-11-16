@@ -1,0 +1,34 @@
+
+const Discord = require("discord.js");
+const fs = require("fs");
+const moment = require("moment");
+
+module.exports.run = async (client,message,args) => {
+  const userData = require("../jsons/userData.json");
+  if(userData[message.author.id].daily != moment().format('L')){ 
+    userData[message.author.id].daily = moment().format('L');
+    userData[message.author.id].money += 100;
+    message.channel.send({"embed":{
+  title:"DAILY",
+  color:0x077401,
+  fields:[{
+    name:"You Get",
+    value:100+"$",
+    inline:true
+  }]}});
+    fs.writeFile("./jsons/userData.json", JSON.stringify(userData), (err) => {
+if (err) console.error(err);
+})
+
+}else{message.channel.send({"embed":{
+  title:"DAILY",
+  color:0xe91a00,
+  description:"You can´t reclaim your daily reward now, you can reclaim it "+ moment().endOf('day').fromNow(),
+
+}});}
+  
+}
+module.exports.help = {
+    name: "daily"
+    
+}

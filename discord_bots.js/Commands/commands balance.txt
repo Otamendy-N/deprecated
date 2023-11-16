@@ -1,0 +1,39 @@
+const Discord = require("discord.js"); //  We need the discord.js package
+const fs = require('fs');
+
+module.exports.run = async (client, message, args) => {
+  let userData = JSON.parse(fs.readFileSync("jsons/userData.json","utf8"));
+  let userm = message.mentions.users.first()
+    if(!userm){
+message.channel.send({"embed":{
+  title:"BANK",
+  color:0x077401,
+  fields:[{
+    name:"Account",
+    value:message.author.username,
+    inline:true
+  
+  },{
+    name:"Balance",
+    value:userData[message.author.id].money,
+    inline:true
+  }]
+//thanks
+}})
+}else{ console.log("step 1");
+  message.channel.send({"embed":{
+  title:"BANK",
+  color:0x077401,
+  fields:[{
+    name:"Account",
+    value:userm.username,
+    inline:true
+  
+  },{
+    name:"Balance",
+    value:userData[userm.id].money,
+    inline:true
+  }]
+//thanks
+}}); 
+console.log("step 2");
